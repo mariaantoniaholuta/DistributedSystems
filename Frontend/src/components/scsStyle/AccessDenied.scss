@@ -1,0 +1,32 @@
+.access-denied-paper {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+  max-width: 300px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .MuiSvgIcon-root {
+    font-size: 48px;
+  }
+
+  .MuiTypography-root {
+    &.MuiTypography-h4 {
+      color: #ff5722;
+      margin-top: 10px;
+    }
+
+    &.MuiTypography-body1 {
+      margin-top: 10px;
+    }
+  }
+}

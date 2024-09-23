@@ -1,0 +1,139 @@
+version: '3'
+
+networks:
+  demo_net:
+    driver: bridge
+
+services:
+  spring-backend-1:
+    image: t3-spring-backend-1
+    build:
+      context: ./Backend1
+      dockerfile: ./Dockerfile
+    container_name: t3-spring-backend-1
+    ports:
+      - "8080:8080"
+    expose:
+      - "8080"
+    environment:
+      - DB_IP=database1
+    depends_on:
+      - database1
+    networks:
+      - demo_net
+
+  spring-backend-2:
+    image: t3-spring-backend-2  
+    build:
+      context: ./Backend2
+      dockerfile: ./Dockerfile
+    container_name: t3-spring-backend-2
+    ports:
+      - "8081:8081"
+    expose:
+      - "8081"
+    environment:
+      - DB_IP=database2
+    depends_on:
+      - database2
+    networks:
+      - demo_net
+
+  spring-backend-3:
+    image: t3-spring-backend-3
+    build:
+      context: ./Backend3
+      dockerfile: ./Dockerfile
+    container_name: t3-spring-backend-3
+    ports:
+      - "8082:8082"
+    expose:
+      - "8082"
+    environment:
+      - DB_IP=database3
+    depends_on:
+      - database3
+    networks:
+      - demo_net
+
+  spring-backend-4:
+    image: t3-spring-backend-4
+    build:
+      context: ./Backend4
+      dockerfile: ./Dockerfile
+    container_name: t3-spring-backend-4
+    ports:
+      - "8083:8083"
+    expose:
+      - "8083"
+    networks:
+      - demo_net
+
+  database1:
+    image: mysql:latest
+    restart: always
+    container_name: t3-mysql-database1
+    ports:
+      - "3309:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: 'Rootpass107'
+      MYSQL_DATABASE: 'Energy_Management'
+    volumes:
+      - my-db1:/var/lib/mysql
+    networks:
+      - demo_net
+
+  database2:
+    image: postgres:latest
+    restart: always
+    container_name: t3-postgres-database2
+    ports:
+      - "5437:5432"
+    environment:
+      POSTGRES_USER: 'postgres'
+      POSTGRES_PASSWORD: 'postgresql'
+      POSTGRES_DB: 'postgres'
+    volumes:
+      - my-db2:/var/lib/postgresql/data
+    networks:
+      - demo_net
+
+  database3:
+    image: postgres:latest
+    restart: always
+    container_name: t3-postgres-database3
+    ports:
+      - "5438:5432"
+    environment:
+      POSTGRES_USER: 'postgres'
+      POSTGRES_PASSWORD: 'postgresql'
+      POSTGRES_DB: 'postgres'
+    volumes:
+      - my-db3:/var/lib/postgresql/data
+    networks:
+      - demo_net
+
+  react-frontend:
+    image: t3-react-frontend
+    build:
+      context: ./Frontend
+      dockerfile: ./Dockerfile
+    container_name: t3-react-frontend
+    ports:
+      - "3000:3000"
+    expose:
+      - "3000"
+    depends_on:
+      - database1
+      - database2
+      - database3
+      - spring-backend-1
+      - spring-backend-2
+      - spring-backend-3
+    networks:
+      - demo_net
+
+volumes:
+  my-db1:
+  my-db2:
+  my-db3:

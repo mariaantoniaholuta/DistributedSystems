@@ -1,0 +1,39 @@
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.login-paper {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+  width: 450px;
+  height: 300px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button {
+  padding-top: 200px;
+  margin-top: 200px;
+}
+
+.login-paper .MuiTextField-root {
+  margin-bottom: 20px;
+}
+
+.login-paper h1 {
+  margin-bottom: 20px;
+  font-size: 24px;
+}

@@ -1,0 +1,22 @@
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.menu-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.menu-buttons button:hover {
+  background-color: #395e9f;
+  color: white;
+  transition: background-color 0.3s;
+}
+
+.user-info button:hover {
+  background-color: #ff5733;
+  color: white;
+  transition: background-color 0.3s;
+}

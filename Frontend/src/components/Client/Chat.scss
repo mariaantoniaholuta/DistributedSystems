@@ -1,0 +1,154 @@
+.main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+
+
+    .chat-container {
+      display: flex;
+      flex-direction: row;
+      height: 50%;
+      width: 700px;
+      border: 1px solid #ccc;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      overflow-y: auto;
+      max-height: 700px;
+    }
+  
+    .member-sidebar {
+      width: 20%;
+      padding: 10px;
+      border-right: 1px solid #ccc;
+      background-color: #f5f5f5;
+  
+      ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+  
+        li {
+          padding: 10px;
+          cursor: pointer;
+          transition: background-color 0.3s;
+  
+          &:hover {
+            background-color: #ddd;
+          }
+  
+          &.active {
+            background-color: #4caf50;
+            color: white;
+          }
+        }
+      }
+    }
+  
+    .chat-content-container {
+      flex: 1;
+      padding: 10px;
+      overflow-y: auto;
+  
+      .chat-messages-list {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+  
+        .message-item {
+          padding: 10px;
+          margin-bottom: 10px;
+          border-radius: 5px;
+  
+          &.self {
+            background-color: f3fcf3;
+            color: #4caf50;
+            text-align: right;
+          }
+  
+          .message-profile {
+            display: inline-block;
+            margin-right: 10px;
+            margin-left: 10px;
+            font-weight: bold;
+          }
+  
+          .message-data {
+            display: inline-block;
+            max-width: 50%;
+          }
+        }
+
+        .message-item.active {
+            background-color: blue;
+            color: white;
+          }
+      }
+  
+      .send-message-section {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 10px;
+  
+        .input-message {
+          flex: 1;
+          padding: 8px;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+        }
+  
+        .send-button {
+          padding: 8px;
+          margin-left: 10px;
+          background-color: #4caf50;
+          color: white;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+  
+          &:hover {
+            background-color: #45a049;
+          }
+        }
+      }
+    }
+  
+    .connection {
+        margin-top: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-image: url('https://upload.wikimedia.org/wikipedia/commons/5/51/IMessage_logo.svg');
+        background-size: cover;
+        width: 500px;
+        height: 500px;
+
+        @media screen and (max-width: 768px) {          
+            width: 300px;
+            height: 300px;
+        }
+      
+        button {
+          padding: 16px;
+          width: 300px;
+          margin-top: 200px;
+          color: #4caf50;
+          background-color: white;
+          border: none;
+          border-radius: 365px;
+          //height: 280px;
+          cursor: pointer;
+          font-size: 23px;
+
+          @media screen and (max-width: 768px) {
+            margin-top: 120px;
+        }
+      
+          &:hover {
+            background-color: #eafcea;
+          }
+        }
+      }
+      
+  }
+  

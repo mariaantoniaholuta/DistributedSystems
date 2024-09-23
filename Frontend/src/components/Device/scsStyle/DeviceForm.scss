@@ -1,0 +1,47 @@
+.device-form-container {
+  background: #5010a3;
+  background: linear-gradient(
+    135deg,
+    rgba(37, 48, 206, 0.1),
+    rgba(75, 170, 217, 0.3)
+  );
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: -100px;
+  
+}
+
+.form-box {
+   background-color: #fff;
+  padding: 2rem;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  max-width: 500px;
+  text-align: center;
+}
+
+.form-title {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.form-input {
+  margin-bottom: 16px;
+}
+
+.form-select {
+  margin-bottom: 16px;
+}
+
+.form-button {
+  margin-top: 26px !important;
+}
+
+.center-snackbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}

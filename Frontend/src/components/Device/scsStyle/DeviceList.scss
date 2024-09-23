@@ -1,0 +1,56 @@
+.container {
+  text-align: center;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+
+  max-width: 980px;
+  
+  .header {
+    margin: 40px;
+    padding-top: 10px;
+  }
+
+  .box {
+    max-height: 750px;
+    overflow-y: auto;
+  }
+
+  .device-paper {
+    background: linear-gradient(
+      135deg,
+      rgba(33, 149, 243, 0.055),
+      rgba(33, 149, 243, 0.219)
+    );
+    border-radius: 10px;
+    margin-top: 20px;
+
+    transition: transform 0.3s;
+
+    &:hover {
+      transform: translateY(-2px);
+    }
+  }
+
+  .list-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+  }
+
+  .device-info {
+    flex: 1;
+  }
+
+  .action-buttons {
+    display: flex;
+    align-items: center;
+
+    button {
+      margin-right: 10px;
+    }
+  }
+}
